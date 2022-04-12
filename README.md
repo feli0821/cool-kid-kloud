@@ -1,4 +1,4 @@
-# cool-kid-kloud
+# cool-kid-kloud - simple / basic voting up 
 Purpose: for my kodekloud learning journey on kubernetes
 
 Base on kodekloud kubernetes for absolute beginner course 
