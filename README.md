@@ -1,5 +1,5 @@
 # cool-kid-kloud
-Purpose: for my kodekloud learning journey on kubernetesS
+Purpose: for my kodekloud learning journey on kubernetes
 
 Base on kodekloud kubernetes for absolute beginner course 
 URL: https://kodekloud.com/courses/kubernetes-for-the-absolute-beginners-hands-on/
@@ -20,35 +20,20 @@ URL: https://kodekloud.com/courses/kubernetes-for-the-absolute-beginners-hands-o
    - kubectl create -f worker-pod.yaml
 
 ## How to verify that all pods and service are created?
-Execute: kubectl get pods,svc
-Alternatively, execute: kubectl get all
+Execute: **kubectl get pods,svc**.   Alternatively, execute: **kubectl get all**
 
---  result should display similar to below --
--- all pods must be in running status and all services are correctly defined with type as below
-===========================
-$ kubectl get all
-NAME                 READY   STATUS    RESTARTS   AGE
-pod/postgres-pod     1/1     Running   0          36m
-pod/redis-pod        1/1     Running   0          51m
-pod/result-app-pod   1/1     Running   0          61m
-pod/voting-app-pod   1/1     Running   0          61m
-pod/worker-app-pod   1/1     Running   0          25m
+The result should display similar to below.  All pods must be in running status and all services are correctly defined with type as below.
 
-NAME                     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
-service/db               ClusterIP   10.110.88.170    <none>        5432/TCP       50m
-service/kubernetes       ClusterIP   10.96.0.1        <none>        443/TCP        2d19h        
-service/redis            ClusterIP   10.103.176.243   <none>        6379/TCP       51m
-service/resutl-service   NodePort    10.111.17.40     <none>        80:30005/TCP   24m
-service/voting-service   NodePort    10.97.18.33      <none>        80:30004/TCP   60m
+![image](https://user-images.githubusercontent.com/34974207/162943553-e469fdcd-4d1d-4ffc-9d64-1e8fed46ce99.png)
+
 
 
 ##  How to access the application
 As this is installed in minikube, you can verify the url for each voting and result app.
-This can be done by executing: minikube service voting-service --url and minikube service resutl-service --url
-        and minikube service voting-service --url
+This can be done by executing: **minikube service voting-service --url** and **minikube service resutl-service --url**.  
 The output should be similar to below:
-           $ minikube service resutl-service --url
-           http://192.168.59.100:30005
+
+![image](https://user-images.githubusercontent.com/34974207/162943634-4cbe6458-0de0-4a74-a9a7-0e751b9095a0.png)
 
 -- Note that IP address is specific to my laptop installation --
 
